@@ -15,18 +15,18 @@ import { Image } from "../../types";
 
 export default function App() {
   const [images, setImages] = useState<Image[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
 
-  const [page, setPage] = useState(1);
-  const [query, setQuery] = useState("");
-  const [totalPages, setTotalPages] = useState(1);
+  const [page, setPage] = useState<number>(1);
+  const [query, setQuery] = useState<string>("");
+  const [totalPages, setTotalPages] = useState<number>(1);
 
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
     alt: string;
   }>({ src: "", alt: "" });
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
   const handleSearch = async (values: { image: string }): Promise<void> => {
     const searchImage = values.image.trim();
